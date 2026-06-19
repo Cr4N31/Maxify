@@ -1,0 +1,59 @@
+import footer_img from '../../assets/images/max2.png'
+function Footer() {
+    const year = new Date().getFullYear()
+
+    const links = [
+        { label: 'How It Works', href: '#how-it-works' },
+        { label: 'Reviews', href: '#reviews' },
+        { label: 'Contact Support', href: '/support' },
+    ]
+
+    return (
+        <footer className='bg-[#00004E] border-t border-white/10 px-6 py-12'>
+            <div className='max-w-2xl mx-auto flex flex-col items-center gap-8'>
+
+                {/* Brand */}
+                <div className='flex flex-col items-center gap-2 text-center'>
+                    {/* Logo */}
+                    <img src={footer_img} className='w-28' alt='nav-img'/>
+                    <p className='text-white/40 text-xs leading-relaxed max-w-xs'>
+                        Nigeria's smartest shopping community. Daily drops, fast delivery, zero stress.
+                    </p>
+                </div>
+
+                {/* Links */}
+                <ul className='flex items-center gap-6 flex-wrap justify-center'>
+                    {links.map((link) => (
+                        <li key={link.label}>
+                            <a
+                                href={link.href}
+                                className='text-white/50 hover:text-white text-sm transition-colors duration-200'
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Divider */}
+                <div className='w-full border-t border-white/10' />
+
+                {/* Bottom row */}
+                <div className='flex flex-col sm:flex-row items-center justify-between w-full gap-2'>
+                    <span className='text-white/30 text-xs'>
+                        © {year} Maxify.ng. All rights reserved.
+                    </span>
+                    <a
+                        href='mailto:support@maxify.ng'
+                        className='text-white/30 hover:text-white/60 text-xs transition-colors duration-200'
+                    >
+                        support@maxify.ng
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+    )
+}
+
+export default Footer

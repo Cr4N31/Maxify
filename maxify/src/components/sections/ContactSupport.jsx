@@ -1,0 +1,77 @@
+function ContactSupport() {
+    const cards = [
+        {
+            id: 1,
+            emoji: '💬',
+            title: 'Chat With Support',
+            desc: 'Got an issue with an order? Hit us directly on WhatsApp and an admin will respond promptly.',
+            action: { label: 'Open Support Chat', href: 'https://wa.me/your-support-link' }
+        },
+        {
+            id: 2,
+            emoji: '📧',
+            title: 'Send Us an Email',
+            desc: 'Prefer email? We respond to all messages within 24 hours on business days.',
+            action: { label: 'support@maxify.ng', href: 'mailto:support@maxify.ng' }
+        },
+        {
+            id: 3,
+            emoji: '🕐',
+            title: 'We\'re Active',
+            desc: 'Outside these hours? Drop a message — we\'ll get back to you first thing.',
+            hours: 'Monday – Saturday · 8:00 AM – 6:00 PM (WAT)'
+        }
+    ]
+
+    return (
+        <section className='bg-white py-20 px-6'>
+            <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
+
+                {/* Header */}
+                <div className='text-center flex flex-col gap-2'>
+                    <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
+                        Support
+                    </span>
+                    <h2 className='text-3xl sm:text-4xl font-bold text-[#00004E] leading-tight'>
+                        We're Here to Help
+                    </h2>
+                    <p className='text-gray-500 text-sm mt-1'>
+                        Real humans run Maxify.ng. Reach out and we'll sort it quickly.
+                    </p>
+                </div>
+
+                {/* Cards */}
+                <ul className='flex flex-col gap-4 w-full'>
+                    {cards.map((c) => (
+                        <li
+                            key={c.id}
+                            className='border border-gray-100 rounded-2xl p-6 flex flex-col gap-3'
+                        >
+                            <span className='text-2xl'>{c.emoji}</span>
+                            <div className='flex flex-col gap-1'>
+                                <h3 className='font-bold text-[#00004E] text-lg'>{c.title}</h3>
+                                <p className='text-gray-500 text-sm leading-relaxed'>{c.desc}</p>
+                                {c.hours && (
+                                    <p className='text-[#0035D4] font-semibold text-sm mt-1'>{c.hours}</p>
+                                )}
+                            </div>
+                            {c.action && (
+                                <a
+                                    href={c.action.href}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    className='self-start mt-1 inline-flex items-center gap-1 bg-[#00004E] hover:bg-[#0035D4] active:scale-95 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200'
+                                >
+                                    {c.action.label}
+                                </a>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+
+            </div>
+        </section>
+    )
+}
+
+export default ContactSupport
