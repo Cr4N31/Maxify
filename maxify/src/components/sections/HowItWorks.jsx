@@ -6,7 +6,7 @@ function HowItWorks() {
     ]
 
     return (
-        <section className='bg-white py-20 px-6' id="how-it-works">
+        <section className='bg-white py-20 px-6' id="how-it-works" data-aos="fade-up">
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
 
                 {/* Header */}

@@ -33,7 +33,7 @@ function SocialProof() {
     const r = reviews[current]
 
     return (
-        <section className='bg-[#00004E] py-20 px-6' id="reviews">
+        <section className='bg-[#00004E] py-20 px-6' id="reviews" data-aos="fade-up">
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
 
                 {/* Header */}

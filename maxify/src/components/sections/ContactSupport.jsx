@@ -1,22 +1,29 @@
+import { MessageCircle, MailIcon, Clock } from "lucide-react"
 function ContactSupport() {
+    const icons = {
+        chat: <MessageCircle size={24} className="text-[#00004E]" />,
+        email: <MailIcon size={24} className="text-[#00004E]" />,
+        hours: <Clock size={24} className="text-[#00004E]" />
+    }
+
     const cards = [
         {
             id: 1,
-            emoji: '💬',
+            icon: icons.chat,
             title: 'Chat With Support',
             desc: 'Got an issue with an order? Hit us directly on WhatsApp and an admin will respond promptly.',
             action: { label: 'Open Support Chat', href: 'https://wa.me/your-support-link' }
         },
         {
             id: 2,
-            emoji: '📧',
+            icon: icons.email,
             title: 'Send Us an Email',
             desc: 'Prefer email? We respond to all messages within 24 hours on business days.',
             action: { label: 'support@maxify.ng', href: 'mailto:support@maxify.ng' }
         },
         {
             id: 3,
-            emoji: '🕐',
+            icon: icons.hours,
             title: 'We\'re Active',
             desc: 'Outside these hours? Drop a message — we\'ll get back to you first thing.',
             hours: 'Monday – Saturday · 8:00 AM – 6:00 PM (WAT)'
@@ -24,7 +31,7 @@ function ContactSupport() {
     ]
 
     return (
-        <section className='bg-white py-20 px-6'>
+        <section className='bg-white py-20 px-6' data-aos="fade-up">
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
 
                 {/* Header */}
@@ -47,7 +54,7 @@ function ContactSupport() {
                             key={c.id}
                             className='border border-gray-100 rounded-2xl p-6 flex flex-col gap-3'
                         >
-                            <span className='text-2xl'>{c.emoji}</span>
+                                <div className='text-4xl'>{c.icon}</div>
                             <div className='flex flex-col gap-1'>
                                 <h3 className='font-bold text-[#00004E] text-lg'>{c.title}</h3>
                                 <p className='text-gray-500 text-sm leading-relaxed'>{c.desc}</p>
