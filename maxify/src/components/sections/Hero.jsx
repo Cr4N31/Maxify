@@ -2,9 +2,9 @@ import hero_bg from '../../assets/images/max1.png'
 import CTAButton from '../ui/CTAbutton'
 function Hero() {
     return (
-        <section className='min-h-screen bg-[#00004E] flex flex-col justify-center items-center text-center px-6 py-20' data-aos="fade-up">
+        <section className='min-h-screen bg-[#00004E] flex flex-col justify-center items-center text-center px-6 py-20'>
             
-            <div className='flex flex-col items-center gap-4 max-w-md mx-auto'>
+            <div className='flex flex-col items-center gap-4 max-w-md mx-auto' data-aos="fade-up">
                 <img 
                     className='w-md object-contain' 
                     src={hero_bg} 
