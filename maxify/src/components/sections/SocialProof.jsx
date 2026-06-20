@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react"
 import CTAButton from "../ui/CTAbutton"
 
+const stats = [
+    { id: 1, value: '2,400+', label: 'Orders Delivered' },
+    { id: 2, value: '4.9★', label: 'Average Rating' },
+    { id: 3, value: '36', label: 'States Covered' },
+]
+
 const reviews = [
     { id: 1, name: 'Chioma A.', location: 'Lagos', text: "Ordered a Bluetooth speaker on Monday, it landed at my door by Wednesday. The product was exactly as shown. These guys are legit 🙌", initial: 'C' },
     { id: 2, name: 'Emeka T.', location: 'Abuja', text: "I was skeptical at first but the community is very active and the admins respond fast. Already made 3 orders and no issues whatsoever.", initial: 'E' },
@@ -48,6 +54,16 @@ function SocialProof() {
                         Thousands of shoppers across Nigeria trust Maxify.ng for their daily finds.
                     </p>
                 </div>
+
+                {/* Stat strip — insert between header and carousel card */}
+                <ul className='flex items-center justify-center gap-8 sm:gap-12'>
+                    {stats.map((s) => (
+                        <li key={s.id} className='flex flex-col items-center gap-1'>
+                            <span className='text-white font-bold text-xl sm:text-2xl'>{s.value}</span>
+                            <span className='text-white/40 text-[10px] sm:text-xs tracking-wide uppercase'>{s.label}</span>
+                        </li>
+                    ))}
+                </ul>
 
                 {/* Carousel Card */}
                 <div

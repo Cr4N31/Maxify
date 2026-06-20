@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import UtilityBanner from "./components/layout/UtilityBanner";
 import Home from "./page/Home"
 import Support from "./page/Support"
 import Navbar from "./components/layout/Navbar"
@@ -15,10 +16,11 @@ function App() {
       once: true,     // Whether animation should happen only once while scrolling
     });
   }, []);
-  
+
   return (
     <BrowserRouter>
       <Navbar />
+      <UtilityBanner />
       <WhatsAppFAB />
       <Routes>
         <Route path="/" element={<Home />} />

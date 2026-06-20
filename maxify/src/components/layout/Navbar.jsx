@@ -41,13 +41,14 @@ function Navbar() {
 
     const links = [
         { label: 'Home',    href: '/',        sectionId: null },
+        { label: 'About', href: '/about', sectionId: null },
         { label: 'Contact', href: '/support', sectionId: null },
     ]
 
     return (
-        <nav className={`fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between transition-all duration-300 ${
-            isHome && !scrolled ? 'bg-transparent' : 'bg-[#00004E] shadow-lg shadow-black/20'
-        }`}>
+        <nav className='fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between transition-all duration-300 ${
+            bg-[#00004E] shadow-lg shadow-black/20'
+            >
 
             <NavLink to='/'>
                 <img src={nav_img} className='w-28' alt='Maxify.ng logo' />
