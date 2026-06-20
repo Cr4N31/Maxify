@@ -58,7 +58,7 @@ function Footer() {
                         href='mailto:support@maxify.ng'
                         className='text-white/30 hover:text-white/60 text-xs transition-colors duration-200'
                     >
-                        support@maxify.ng
+                        maxify.ng@gmail.com
                     </a>
                 </div>
 

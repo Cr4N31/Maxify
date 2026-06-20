@@ -19,7 +19,7 @@ function ContactSupport() {
             icon: icons.email,
             title: 'Send Us an Email',
             desc: 'Prefer email? We respond to all messages within 24 hours on business days.',
-            action: { label: 'support@maxify.ng', href: 'mailto:support@maxify.ng' }
+            action: { label: 'maxify.ng@gmail.com', href: 'mailto:maxify.ng@gmail.com' }
         },
         {
             id: 3,
