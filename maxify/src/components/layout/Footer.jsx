@@ -4,10 +4,6 @@ import { FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa'
 function Footer() {
     const year = new Date().getFullYear()
 
-    const links = [
-        { label: 'Contact Support', href: '/support' },
-    ]
-
     return (
         <footer className='bg-black border-t border-white/10 px-6 py-12'>
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-8'>
@@ -55,7 +51,7 @@ function Footer() {
                         </a>
                     </div>
                     <a
-                        href='mailto:support@maxify.ng'
+                        href='mailto:maxify.ng@gmail.com'
                         className='text-white/30 hover:text-white/60 text-xs transition-colors duration-200'
                     >
                         maxify.ng@gmail.com
