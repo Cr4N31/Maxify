@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react"
-import CTAButton from "../ui/CTAbutton"
-
 const stats = [
     { id: 1, value: '2,400+', label: 'Orders Delivered' },
     { id: 2, value: '4.9★', label: 'Average Rating' },
@@ -21,98 +18,62 @@ const reviews = [
 ]
 
 function SocialProof() {
-    const [current, setCurrent] = useState(0)
-    const [visible, setVisible] = useState(true)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setVisible(false)
-            setTimeout(() => {
-                setCurrent(prev => (prev + 1) % reviews.length)
-                setVisible(true)
-            }, 400)
-        }, 4000)
-
-        return () => clearInterval(interval)
-    }, [])
-
-    const r = reviews[current]
-
     return (
-        <section className='bg-[#00004E] py-20 px-6' id="reviews" data-aos="fade-up">
-            <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
+        <section className='bg-white py-20 px-6' id="reviews" data-aos="fade-up">
+            <div className='max-w-5xl mx-auto flex flex-col gap-10'>
 
                 {/* Header */}
-                <div className='text-center flex flex-col gap-2'>
-                    <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
-                        Real People. Real Orders.
-                    </span>
-                    <h2 className='text-3xl sm:text-4xl font-bold text-white leading-tight'>
-                        See What Our Community <br className='hidden sm:block' /> Is Saying
-                    </h2>
-                    <p className='text-white/50 text-sm mt-1'>
-                        Thousands of shoppers across Nigeria trust Maxify.ng for their daily finds.
-                    </p>
+                <div className='flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6'>
+                    <div className='flex flex-col gap-2'>
+                        <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
+                            Real People. Real Orders.
+                        </span>
+                        <h2 className='text-3xl sm:text-4xl font-bold text-[#00004E] leading-tight'>
+                            See What Our Community Is Saying
+                        </h2>
+                    </div>
+
+                    {/* Stat strip — now sits beside the header, store-data style */}
+                    <ul className='flex items-center gap-6 sm:gap-8'>
+                        {stats.map((s) => (
+                            <li key={s.id} className='flex flex-col gap-0.5'>
+                                <span className='text-[#00004E] font-bold text-xl'>{s.value}</span>
+                                <span className='text-gray-400 text-[10px] tracking-wide uppercase'>{s.label}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-                {/* Stat strip — insert between header and carousel card */}
-                <ul className='flex items-center justify-center gap-8 sm:gap-12'>
-                    {stats.map((s) => (
-                        <li key={s.id} className='flex flex-col items-center gap-1'>
-                            <span className='text-white font-bold text-xl sm:text-2xl'>{s.value}</span>
-                            <span className='text-white/40 text-[10px] sm:text-xs tracking-wide uppercase'>{s.label}</span>
+                {/* Horizontal scroll strip — dbrand style */}
+                <ul className='flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6 px-6'>
+                    {reviews.map((r) => (
+                        <li
+                            key={r.id}
+                            className='snap-start flex-shrink-0 w-72 bg-gray-50 border border-gray-100 rounded-2xl p-5 flex flex-col gap-3'
+                        >
+                            <div className='text-[#FF0050] text-sm'>★★★★★</div>
+
+                            <p className='text-gray-600 text-sm leading-relaxed line-clamp-4'>
+                                "{r.text}"
+                            </p>
+
+                            <div className='flex items-center gap-3 mt-auto pt-2'>
+                                <div className='w-9 h-9 rounded-full bg-[#0035D4] flex items-center justify-center text-white font-bold text-sm flex-shrink-0'>
+                                    {r.initial}
+                                </div>
+                                <div className='flex flex-col'>
+                                    <span className='text-[#00004E] font-semibold text-sm'>{r.name}</span>
+                                    <span className='text-gray-400 text-xs'>{r.location}</span>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>
 
-                {/* Carousel Card */}
-                <div
-                    className='w-full bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-4'
-                    style={{
-                        opacity: visible ? 1 : 0,
-                        transition: 'opacity 0.4s ease-in-out'
-                    }}
-                >
-                    <div className='flex items-center justify-between'>
-                        <div className='text-[#FF0050] text-sm'>★★★★★</div>
-                        <span className='text-white/20 text-xs'>{current + 1} / {reviews.length}</span>
-                    </div>
+                <span className='text-gray-400 text-xs text-center'>
+                    Swipe to see more reviews →
+                </span>
 
-                    <p className='text-white/80 text-sm leading-relaxed'>
-                        "{r.text}"
-                    </p>
-
-                    <div className='flex items-center gap-3'>
-                        <div className='w-9 h-9 rounded-full bg-[#0035D4] flex items-center justify-center text-white font-bold text-sm flex-shrink-0'>
-                            {r.initial}
-                        </div>
-                        <div className='flex flex-col'>
-                            <span className='text-white font-semibold text-sm'>{r.name}</span>
-                            <span className='text-white/40 text-xs'>{r.location}</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Dot indicators */}
-                <div className='flex gap-2 -mt-6 flex-wrap justify-center'>
-                    {reviews.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => {
-                                setVisible(false)
-                                setTimeout(() => {
-                                    setCurrent(i)
-                                    setVisible(true)
-                                }, 400)
-                            }}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${
-                                i === current ? 'w-6 bg-[#FF0050]' : 'w-2 bg-white/20'
-                            }`}
-                        />
-                    ))}
-                </div>
-
-                <CTAButton />
             </div>
         </section>
     )

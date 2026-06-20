@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const products = [
     { id: 1, name: 'Wireless Earbuds Pro', price: 12500, tag: 'Hot' },
     { id: 2, name: 'Smart Watch Series X', price: 18000, tag: 'New' },
@@ -11,72 +13,69 @@ const products = [
     { id: 10, name: 'USB-C Hub Adapter', price: 9500, tag: null },
 ]
 
-const WHATSAPP_NUMBER = 'your-number-here'
-
 function formatNaira(amount) {
     return `₦${amount.toLocaleString()}`
 }
 
-function buildEnquiryLink(product) {
-    const message = `Hi, I'd like to make an enquiry on ${product.name} for ${formatNaira(product.price)}.`
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
-}
-
 function ProductGrid() {
     return (
-        <section className='bg-white py-20 px-6'>
-            <div className='max-w-5xl mx-auto flex flex-col items-center gap-12'>
+        <section id='drops' className='bg-[#0a0a2e] py-20 px-6'>
+            <div className='max-w-5xl mx-auto flex flex-col gap-10'>
 
-                {/* Header */}
-                <div className='text-center flex flex-col gap-2'>
-                    <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
-                        Today's Drops
+                {/* Header — store-style, left aligned, count + filter feel */}
+                <div className='flex items-end justify-between flex-wrap gap-4'>
+                    <div className='flex flex-col gap-2'>
+                        <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
+                            Today's Drops
+                        </span>
+                        <h2 className='text-3xl sm:text-4xl font-bold text-white leading-tight'>
+                            Live Inventory
+                        </h2>
+                    </div>
+                    <span className='text-white/40 text-sm'>
+                        Showing {products.length} of {products.length} drops
                     </span>
-                    <h2 className='text-3xl sm:text-4xl font-bold text-[#00004E] leading-tight'>
-                        Tap Any Product to Enquire
-                    </h2>
-                    <p className='text-gray-500 text-sm mt-1'>
-                        Sends a pre-filled message straight to our WhatsApp community.
-                    </p>
                 </div>
 
                 {/* Masonry grid */}
                 <div className='w-full columns-2 sm:columns-3 lg:columns-4 gap-4 space-y-4'>
                     {products.map((p, i) => {
-                        // vary height per item to create the masonry effect
                         const heightClass = ['h-56', 'h-72', 'h-64', 'h-80'][i % 4]
 
                         return (
-                            <a
+                            <Link
                                 key={p.id}
-                                href={buildEnquiryLink(p)}
-                                target='_blank'
-                                rel='noreferrer'
-                                className='group relative block w-full break-inside-avoid rounded-xl overflow-hidden bg-gray-200'
+                                to={`/product/${p.id}`}
+                                className='group relative block w-full break-inside-avoid rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 transition-colors duration-300'
                             >
-                                {/* Image placeholder */}
-                                <div className={`relative w-full ${heightClass} bg-gray-200 flex items-center justify-center`}>
+                                <div className={`relative w-full ${heightClass} bg-white/10 flex items-center justify-center`}>
                                     {p.tag && (
-                                        <span className='absolute top-2 left-2 z-10 bg-[#FF0050] text-white text-[10px] font-bold px-2 py-0.5 rounded-full'>
+                                        <span className={`absolute top-2 left-2 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full text-white ${
+                                            p.tag === 'Hot' ? 'bg-[#FF0050]' : 'bg-[#0035D4]'
+                                        }`}>
                                             {p.tag}
                                         </span>
                                     )}
-                                    <span className='text-gray-400 text-xs'>image</span>
+                                    <span className='text-white/20 text-xs'>image</span>
                                 </div>
 
-                                {/* Hover overlay with details */}
-                                <div className='absolute inset-0 bg-[#00004E]/0 group-hover:bg-[#00004E]/80 transition-all duration-300 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100'>
-                                    <span className='text-white text-sm font-semibold leading-snug line-clamp-2'>
+                                {/* Always-visible price strip — Ogabassey style, not hover-only */}
+                                <div className='p-3 flex flex-col gap-0.5 bg-white/5'>
+                                    <span className='text-white text-xs font-medium leading-snug line-clamp-1'>
                                         {p.name}
                                     </span>
-                                    <span className='text-[#FF0050] text-base font-bold mt-1'>
+                                    <span className='text-[#FF0050] text-sm font-bold'>
                                         {formatNaira(p.price)}
                                     </span>
-                                    <span className='text-white/60 text-[10px] mt-1'>
-                                        Tap to enquire →
+                                </div>
+
+                                {/* Hover overlay — dbrand style detail reveal */}
+                                <div className='absolute inset-0 bg-[#00004E]/0 group-hover:bg-[#00004E]/70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100'>
+                                    <span className='text-white text-xs font-semibold tracking-wide border border-white/40 rounded-full px-4 py-1.5'>
+                                        View Details
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         )
                     })}
                 </div>
