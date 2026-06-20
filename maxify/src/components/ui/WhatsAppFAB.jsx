@@ -1,10 +1,10 @@
 function WhatsAppFAB() {
     return (
         <a
-            href='https://wa.me/your-link-here'
+            href='https://whatsapp.com/channel/0029VbCZTo0FSAswZ4hzNB2E'
             target='_blank'
             rel='noreferrer'
-            className='fixed bottom-6 right-6 z-50 bg-[#FF0050] hover:bg-[#1ebe5d] active:scale-95 text-white p-4 rounded-full shadow-lg shadow-black/40 transition-all duration-200'
+            className='fixed bottom-6 right-6 z-50 bg-orange-500 hover:bg-orange-600 active:scale-95 text-white p-4 rounded-full shadow-lg shadow-black/40 transition-all duration-200'
             aria-label='Chat on WhatsApp'
         >
             <svg

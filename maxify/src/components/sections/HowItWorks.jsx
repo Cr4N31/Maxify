@@ -6,13 +6,13 @@ function HowItWorks() {
     ]
 
     return (
-        <section className='bg-white py-20 px-6' id="how-it-works" data-aos="fade-up">
+        <section className='bg-black py-20 px-6' id="how-it-works" data-aos="fade-up">
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
 
                 {/* Header */}
                 <div className='text-center flex flex-col gap-2'>
-                    <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>How It Works</span>
-                    <h2 className='text-3xl sm:text-4xl font-bold text-[#0035D4] tracking-wide leading-tight'>
+                    <span className='text-orange-500 text-xs font-semibold tracking-widest uppercase'>How It Works</span>
+                    <h2 className='text-3xl sm:text-4xl font-bold text-white/70 tracking-wide leading-tight'>
                         From Discovery to Doorstep <br className='hidden sm:block' /> in 3 Simple Steps
                     </h2>
                 </div>
@@ -21,12 +21,12 @@ function HowItWorks() {
                 <ul className='grid grid-cols-1 md:grid-cols-3 md:gap-20 gap-8 w-full'>
                     {steps.map((s) => (
                         <li key={s.id} className='flex flex-col justify-center gap-3'>
-                            <span className='text-4xl font-bold text-[#FF0050]/30 leading-none'>
+                            <span className='text-4xl font-bold text-orange-500/30 leading-none'>
                                 {String(s.id).padStart(2, '0')}
                             </span>
                             <div className='flex flex-col gap-1'>
-                                <h3 className='font-bold text-[#00004E] text-lg'>{s.name}</h3>
-                                <p className='text-gray-500 text-sm leading-relaxed'>{s.desc}</p>
+                                <h3 className='font-bold text-white/70 text-lg'>{s.name}</h3>
+                                <p className='text-gray-400 text-sm leading-relaxed'>{s.desc}</p>
                             </div>
                         </li>
                     ))}

@@ -48,21 +48,20 @@ function Navbar() {
         return `relative text-sm font-medium transition-colors duration-200 pb-0.5
             after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:rounded-full after:transition-all after:duration-300
             ${isActive
-                ? 'text-white after:w-full after:bg-[#FF0050]'
-                : 'text-white/50 hover:text-white/80 after:w-0 after:bg-[#FF0050]'
+                ? 'text-white after:w-full after:bg-orange-500'
+                : 'text-white/50 hover:text-white/80 after:w-0 after:bg-orange-500'
             }`
     }
 
     const links = [
         { label: 'Home',    href: '/',        sectionId: null },
-        { label: 'Drops',   href: '/#drops',  sectionId: null },
-        { label: 'About',   href: '/about',   sectionId: null },
+        { label: 'Drops',   href: '/#drops',  sectionId: 'drops' },
         { label: 'Contact', href: '/support', sectionId: null },
     ]
 
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between transition-all duration-300 bg-[#00004E] ${
+            <nav className={`fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between transition-all duration-300 bg-black ${
                 scrolled ? 'shadow-lg shadow-black/30 border-b border-white/5' : ''
             }`}>
 
@@ -95,12 +94,12 @@ function Navbar() {
                 <div className='flex items-center gap-4'>
 
                     <span className='hidden sm:inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs text-white/60'>
-                        <span className='w-1.5 h-1.5 rounded-full bg-[#FF0050] animate-pulse' />
+                        <span className='w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse' />
                         10 drops live
                     </span>
                     <a
                     
-                        href='https://wa.me/your-link-here'
+                        href='https://whatsapp.com/channel/0029VbCZTo0FSAswZ4hzNB2E'
                         target='_blank'
                         rel='noreferrer'
                         aria-label='Chat on WhatsApp'
@@ -146,7 +145,7 @@ function Navbar() {
                 />
 
                 {/* Slide-in panel */}
-                <div className={`absolute top-0 right-0 h-full w-72 bg-[#00004E] border-l border-white/10 pt-24 px-6 flex flex-col gap-6 transition-transform duration-300 ${
+                <div className={`absolute top-0 right-0 h-full w-72 bg-black border-l border-white/10 pt-24 px-6 flex flex-col gap-6 transition-transform duration-300 ${
                     menuOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}>
                     <ul className='flex flex-col gap-5'>

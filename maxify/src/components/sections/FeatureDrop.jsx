@@ -41,7 +41,7 @@ function FeaturedDrops() {
     }, [])
 
     return (
-        <div className='w-full bg-[#00004E] pb-4 py-8'>
+        <div className='w-full bg-black pb-4 py-8'>
             <div className='flex items-center justify-between px-6 max-w-2xl mx-auto mb-4'>
                 <span className='text-white/40 text-xs font-semibold tracking-widest uppercase'>
                     Today's Drops
@@ -60,7 +60,7 @@ function FeaturedDrops() {
                     >
                         <div className='relative w-full aspect-square bg-white/10 flex items-center justify-center'>
                             {d.tag && (
-                                <span className='absolute top-2 left-2 bg-[#FF0050] text-white text-[10px] font-bold px-2 py-0.5 rounded-full'>
+                                <span className='absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full'>
                                     {d.tag}
                                 </span>
                             )}
@@ -70,7 +70,7 @@ function FeaturedDrops() {
                             <span className='text-white text-xs font-medium leading-snug line-clamp-2'>
                                 {d.name}
                             </span>
-                            <span className='text-[#FF0050] text-sm font-bold'>
+                            <span className='text-orange-500 text-sm font-bold'>
                                 {d.price}
                             </span>
                         </div>

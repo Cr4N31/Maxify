@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import UtilityBanner from "./components/layout/UtilityBanner";
 import Home from "./page/Home"
+import ProductDetail from "./page/ProductDetail"
 import Support from "./page/Support"
 import Navbar from "./components/layout/Navbar"
 import Footer from "./components/layout/Footer"
@@ -20,10 +20,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <UtilityBanner />
-      <WhatsAppFAB />
+         <WhatsAppFAB />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/support" element={<Support />} />
       </Routes>
       <Footer />

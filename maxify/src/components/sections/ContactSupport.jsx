@@ -1,9 +1,9 @@
 import { MessageCircle, MailIcon, Clock } from "lucide-react"
 function ContactSupport() {
     const icons = {
-        chat: <MessageCircle size={24} className="text-[#00004E]" />,
-        email: <MailIcon size={24} className="text-[#00004E]" />,
-        hours: <Clock size={24} className="text-[#00004E]" />
+        chat: <MessageCircle size={24} className="text-orange-500" />,
+        email: <MailIcon size={24} className="text-orange-500" />,
+        hours: <Clock size={24} className="text-orange-500" />
     }
 
     const cards = [
@@ -12,7 +12,7 @@ function ContactSupport() {
             icon: icons.chat,
             title: 'Chat With Support',
             desc: 'Got an issue with an order? Hit us directly on WhatsApp and an admin will respond promptly.',
-            action: { label: 'Open Support Chat', href: 'https://wa.me/your-support-link' }
+            action: { label: 'Open Support Chat', href: 'https://whatsapp.com/channel/0029VbCZTo0FSAswZ4hzNB2E' }
         },
         {
             id: 2,
@@ -31,15 +31,15 @@ function ContactSupport() {
     ]
 
     return (
-        <section className='bg-white py-20 px-6' data-aos="fade-up">
+        <section className='bg-black py-20 px-6' data-aos="fade-up">
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-12'>
 
                 {/* Header */}
                 <div className='text-center flex flex-col gap-2'>
-                    <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
+                    <span className='text-orange-500 text-xs font-semibold tracking-widest uppercase'>
                         Support
                     </span>
-                    <h2 className='text-3xl sm:text-4xl font-bold text-[#00004E] leading-tight'>
+                    <h2 className='text-3xl sm:text-4xl font-bold text-white leading-tight'>
                         We're Here to Help
                     </h2>
                     <p className='text-gray-500 text-sm mt-1'>
@@ -52,14 +52,14 @@ function ContactSupport() {
                     {cards.map((c) => (
                         <li
                             key={c.id}
-                            className='border border-gray-100 rounded-2xl p-6 flex flex-col gap-3'
+                            className='rounded-2xl p-6 flex flex-col gap-3'
                         >
                                 <div className='text-4xl'>{c.icon}</div>
                             <div className='flex flex-col gap-1'>
-                                <h3 className='font-bold text-[#00004E] text-lg'>{c.title}</h3>
+                                <h3 className='font-bold text-orange-500 text-lg'>{c.title}</h3>
                                 <p className='text-gray-500 text-sm leading-relaxed'>{c.desc}</p>
                                 {c.hours && (
-                                    <p className='text-[#0035D4] font-semibold text-sm mt-1'>{c.hours}</p>
+                                    <p className='text-orange-500 font-semibold text-sm mt-1'>{c.hours}</p>
                                 )}
                             </div>
                             {c.action && (
@@ -67,7 +67,7 @@ function ContactSupport() {
                                     href={c.action.href}
                                     target='_blank'
                                     rel='noreferrer'
-                                    className='self-start mt-1 inline-flex items-center gap-1 bg-[#00004E] hover:bg-[#0035D4] active:scale-95 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200'
+                                    className='self-start mt-1 inline-flex items-center gap-1 bg-orange-500 hover:bg-orange-700 active:scale-95 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200'
                                 >
                                     {c.action.label}
                                 </a>

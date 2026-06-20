@@ -19,16 +19,16 @@ const reviews = [
 
 function SocialProof() {
     return (
-        <section className='bg-white py-20 px-6' id="reviews" data-aos="fade-up">
+        <section className='bg-black py-20 px-6' id="reviews" data-aos="fade-up">
             <div className='max-w-5xl mx-auto flex flex-col gap-10'>
 
                 {/* Header */}
                 <div className='flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6'>
                     <div className='flex flex-col gap-2'>
-                        <span className='text-[#FF0050] text-xs font-semibold tracking-widest uppercase'>
+                        <span className='text-orange-500 text-xs font-semibold tracking-widest uppercase'>
                             Real People. Real Orders.
                         </span>
-                        <h2 className='text-3xl sm:text-4xl font-bold text-[#00004E] leading-tight'>
+                        <h2 className='text-3xl sm:text-4xl font-bold text-white leading-tight'>
                             See What Our Community Is Saying
                         </h2>
                     </div>
@@ -37,7 +37,7 @@ function SocialProof() {
                     <ul className='flex items-center gap-6 sm:gap-8'>
                         {stats.map((s) => (
                             <li key={s.id} className='flex flex-col gap-0.5'>
-                                <span className='text-[#00004E] font-bold text-xl'>{s.value}</span>
+                                <span className='text-orange-500 font-bold text-xl'>{s.value}</span>
                                 <span className='text-gray-400 text-[10px] tracking-wide uppercase'>{s.label}</span>
                             </li>
                         ))}
@@ -45,25 +45,25 @@ function SocialProof() {
                 </div>
 
                 {/* Horizontal scroll strip — dbrand style */}
-                <ul className='flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6 px-6'>
+                <ul className='flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 custom-scrollbar -mx-6 px-6'>
                     {reviews.map((r) => (
                         <li
                             key={r.id}
-                            className='snap-start flex-shrink-0 w-72 bg-gray-50 border border-gray-100 rounded-2xl p-5 flex flex-col gap-3'
+                            className='snap-start flex-shrink-0 w-72 bg-black/50 backdrop-blur-xl  rounded-2xl p-5 flex flex-col gap-3'
                         >
-                            <div className='text-[#FF0050] text-sm'>★★★★★</div>
+                            <div className='text-orange-500 text-sm'>★★★★★</div>
 
-                            <p className='text-gray-600 text-sm leading-relaxed line-clamp-4'>
+                            <p className='text-white/80 text-sm leading-relaxed line-clamp-4'>
                                 "{r.text}"
                             </p>
 
                             <div className='flex items-center gap-3 mt-auto pt-2'>
-                                <div className='w-9 h-9 rounded-full bg-[#0035D4] flex items-center justify-center text-white font-bold text-sm flex-shrink-0'>
+                                <div className='w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0'>
                                     {r.initial}
                                 </div>
                                 <div className='flex flex-col'>
-                                    <span className='text-[#00004E] font-semibold text-sm'>{r.name}</span>
-                                    <span className='text-gray-400 text-xs'>{r.location}</span>
+                                    <span className='text-white font-semibold text-sm'>{r.name}</span>
+                                    <span className='text-white/60 text-xs'>{r.location}</span>
                                 </div>
                             </div>
                         </li>

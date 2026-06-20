@@ -1,10 +1,10 @@
 function CTAButton() {
     return (
         <a
-            href='https://wa.me/your-link-here'
+            href='https://whatsapp.com/channel/0029VbCZTo0FSAswZ4hzNB2E'
             target='_blank'
             rel='noreferrer'
-            className='inline-flex items-center gap-2 bg-[#FF0050] hover:bg-[#e0004a] active:scale-95 text-white font-semibold text-base px-8 py-4 rounded-full transition-all duration-200'
+            className='inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 active:scale-95 text-white font-semibold text-base px-8 py-4 rounded-full transition-all duration-200'
         >
             <svg
                 xmlns='http://www.w3.org/2000/svg'

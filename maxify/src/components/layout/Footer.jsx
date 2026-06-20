@@ -1,15 +1,15 @@
 import footer_img from '../../assets/images/max2.png'
+import { FaInstagram, FaTiktok, FaFacebookF } from 'react-icons/fa'
+
 function Footer() {
     const year = new Date().getFullYear()
 
     const links = [
-        { label: 'How It Works', href: '#how-it-works' },
-        { label: 'Reviews', href: '#reviews' },
         { label: 'Contact Support', href: '/support' },
     ]
 
     return (
-        <footer className='bg-[#00004E] border-t border-white/10 px-6 py-12'>
+        <footer className='bg-black border-t border-white/10 px-6 py-12'>
             <div className='max-w-2xl mx-auto flex flex-col items-center gap-8'>
 
                 {/* Brand */}
@@ -43,6 +43,17 @@ function Footer() {
                     <span className='text-white/30 text-xs'>
                         © {year} Maxify.ng. All rights reserved.
                     </span>
+                    <div className='flex items-center gap-4'>
+                        <a href='https://instagram.com/maxify.ng' target='_blank' rel='noopener noreferrer'>
+                            <FaInstagram className='w-4 h-4 text-white/30 hover:text-white transition-colors duration-200'/>
+                        </a>
+                        <a href='https://tiktok.com/@maxify.ng' target='_blank' rel='noopener noreferrer'>
+                            <FaTiktok className='w-4 h-4 text-white/30 hover:text-white transition-colors duration-200'/>
+                        </a>
+                        <a href='https://facebook.com/maxify.ng' target='_blank' rel='noopener noreferrer'>
+                            <FaFacebookF className='w-4 h-4 text-white/30 hover:text-white transition-colors duration-200'/>
+                        </a>
+                    </div>
                     <a
                         href='mailto:support@maxify.ng'
                         className='text-white/30 hover:text-white/60 text-xs transition-colors duration-200'
