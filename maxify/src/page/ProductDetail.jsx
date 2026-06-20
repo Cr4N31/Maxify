@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { products, formatNaira, buildEnquiryMessage } from '../data/products'
-import CTAButton from '../components/ui/CTAButton'
+import CTAbutton from '../components/ui/CTAbutton'
 
 function ProductDetail() {
     const { id } = useParams()
