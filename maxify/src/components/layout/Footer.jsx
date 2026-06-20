@@ -10,18 +10,14 @@ function Footer() {
 
                 {/* Brand */}
                 <div className='flex flex-col items-center gap-2 text-center'>
-                    {/* Logo */}
                     <img src={footer_img} className='w-28' alt='nav-img'/>
                     <p className='text-white/40 text-xs leading-relaxed max-w-xs'>
                         Nigeria's smartest shopping community. Daily drops, fast delivery, zero stress.
                     </p>
                 </div>
 
-
-                {/* Divider */}
                 <div className='w-full border-t border-white/10' />
 
-                {/* Bottom row */}
                 <div className='flex flex-col sm:flex-row items-center justify-between w-full gap-2'>
                     <span className='text-white/30 text-xs'>
                         © {year} Maxify.ng. All rights reserved.
