@@ -54,7 +54,7 @@ function ProductGrid() {
                                     </span>
                                 </div>
 
-                                <div className='absolute inset-0 bg-[#00004E]/0 group-hover:bg-[#00004E]/70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100'>
+                                <div className='absolute inset-0 bg-orange-400/10 group-hover:bg-orange-400/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100'>
                                     <span className='text-white text-xs font-semibold tracking-wide border border-white/40 rounded-full px-4 py-1.5'>
                                         View Details
                                     </span>

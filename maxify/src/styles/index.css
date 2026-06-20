@@ -30,3 +30,8 @@
     scrollbar-width: thin;
     scrollbar-color: rgba(235, 154, 4, 0.822) transparent;
 }
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+

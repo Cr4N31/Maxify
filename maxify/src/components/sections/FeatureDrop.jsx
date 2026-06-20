@@ -1,20 +1,8 @@
 import { useRef, useEffect } from 'react'
-
-const baseDrops = [
-    { id: 1, name: 'Wireless Earbuds Pro', price: '₦12,500', tag: 'Hot' },
-    { id: 2, name: 'Smart Watch Series X', price: '₦18,000', tag: 'New' },
-    { id: 3, name: 'Portable Bluetooth Speaker', price: '₦9,800', tag: 'Hot' },
-    { id: 4, name: 'Phone Ring Light Kit', price: '₦6,200', tag: null },
-    { id: 5, name: 'Power Bank 20000mAh', price: '₦8,500', tag: 'New' },
-    { id: 6, name: 'Wireless Phone Charger', price: '₦7,400', tag: null },
-    { id: 7, name: 'Bluetooth Neckband', price: '₦8,900', tag: 'Hot' },
-    { id: 8, name: 'Mini Projector HD', price: '₦24,000', tag: 'New' },
-    { id: 9, name: 'Smart Fitness Band', price: '₦10,200', tag: null },
-    { id: 10, name: 'USB-C Hub Adapter', price: '₦9,500', tag: null },
-]
+import { products, formatNaira } from '../../data/products'
 
 // duplicate the list so the scroll loop feels seamless
-const drops = [...baseDrops, ...baseDrops]
+const drops = [...products, ...products]
 
 function FeaturedDrops() {
     const scrollRef = useRef(null)
@@ -28,7 +16,6 @@ function FeaturedDrops() {
         const tick = () => {
             el.scrollLeft += 0.6 // scroll speed
 
-            // reset seamlessly once we've scrolled past the first set
             if (el.scrollLeft >= el.scrollWidth / 2) {
                 el.scrollLeft = 0
             }
@@ -53,25 +40,25 @@ function FeaturedDrops() {
                 ref={scrollRef}
                 className='flex gap-4 overflow-x-hidden px-6 pb-2 scrollbar-hide'
             >
-                {drops.map((d, i) => (
+                {drops.map((p, i) => (
                     <li
-                        key={`${d.id}-${i}`}
+                        key={`${p.id}-${i}`}
                         className='flex-shrink-0 w-36 bg-white/5 border border-white/10 rounded-xl overflow-hidden'
                     >
                         <div className='relative w-full aspect-square bg-white/10 flex items-center justify-center'>
-                            {d.tag && (
+                            {p.tag && (
                                 <span className='absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full'>
-                                    {d.tag}
+                                    {p.tag}
                                 </span>
                             )}
-                            <span className='text-white/20 text-xs'>image</span>
+                            <img src={p.img} alt={p.name} className='w-full h-full object-cover' />
                         </div>
                         <div className='p-3 flex flex-col gap-0.5'>
                             <span className='text-white text-xs font-medium leading-snug line-clamp-2'>
-                                {d.name}
+                                {p.name}
                             </span>
                             <span className='text-orange-500 text-sm font-bold'>
-                                {d.price}
+                                {formatNaira(p.price)}
                             </span>
                         </div>
                     </li>

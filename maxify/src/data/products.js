@@ -1,12 +1,18 @@
 import wireless_earbuds from '../assets/product-img/wirelessearbuds.jpg'
 import smart_watch from '../assets/product-img/smartwatch.jpg'
 import mini_projector from '../assets/product-img/miniprojector.jpg'
+import power_bank from '../assets/product-img/powerbank.jpg'
+import bluetooth from '../assets/product-img/btspeaker.jpg'
+import wireless_charger from '../assets/product-img/wireless.webp'
+import neckband from '../assets/product-img/neckband.jfif'
+import usbC from '../assets/product-img/usbc.jfif'
+import smart_fitness from '../assets/product-img/smart.jfif'
 
 export const products = [
     {
         id: 1,
         name: 'Wireless Earbuds Pro',
-        price: 12500,
+        price: 200000,
         tag: 'Hot',
         img: wireless_earbuds,
         description: 'Crisp sound, all-day battery, and a snug fit. One of our most enquired drops every week.',
@@ -22,45 +28,37 @@ export const products = [
     {
         id: 3,
         name: 'Portable Bluetooth Speaker',
-        price: 9800,
+        price: 150000,
         tag: 'Hot',
-        img: null,
+        img: bluetooth,
         description: 'Loud, compact, and built for all-day play. Perfect for outdoor hangouts or the gym.',
     },
     {
         id: 4,
-        name: 'Phone Ring Light Kit',
-        price: 6200,
-        tag: null,
-        img: null,
-        description: 'Adjustable brightness ring light with phone clip — built for content creators and live calls.',
-    },
-    {
-        id: 5,
         name: 'Power Bank 20000mAh',
-        price: 8500,
+        price: 30000,
         tag: 'New',
-        img: null,
+        img: power_bank,
         description: 'High-capacity power bank that charges your phone multiple times over before needing a recharge.',
     },
     {
-        id: 6,
+        id: 5,
         name: 'Wireless Phone Charger',
-        price: 7400,
+        price: 20000,
         tag: null,
-        img: null,
+        img: wireless_charger,
         description: 'Drop your phone, it charges. No cables, no fuss, fast-charging compatible.',
     },
     {
-        id: 7,
+        id: 6,
         name: 'Bluetooth Neckband',
-        price: 8900,
+        price: 15000,
         tag: 'Hot',
-        img: null,
+        img: neckband,
         description: 'Lightweight neckband earphones with magnetic buds and strong battery life.',
     },
     {
-        id: 8,
+        id: 7,
         name: 'Mini Projector HD',
         price: 24000,
         tag: 'New',
@@ -68,19 +66,19 @@ export const products = [
         description: 'Turn any wall into a screen. Compact, sharp, and ready to ship straight to your door.',
     },
     {
-        id: 9,
+        id: 8,
         name: 'Smart Fitness Band',
         price: 10200,
         tag: null,
-        img: null,
+        img: smart_fitness,
         description: 'Tracks steps, sleep, and workouts in a slim, lightweight band.',
     },
     {
-        id: 10,
+        id: 9,
         name: 'USB-C Hub Adapter',
-        price: 9500,
+        price: 10000,
         tag: null,
-        img: null,
+        img: usbC,
         description: 'Expand one USB-C port into HDMI, USB-A, and SD card slots — built for laptops on the go.',
     },
 ]
