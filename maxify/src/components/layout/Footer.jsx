@@ -17,19 +17,6 @@ function Footer() {
                     </p>
                 </div>
 
-                {/* Links */}
-                <ul className='flex items-center gap-6 flex-wrap justify-center'>
-                    {links.map((link) => (
-                        <li key={link.label}>
-                            <a
-                                href={link.href}
-                                className='text-white/50 hover:text-white text-sm transition-colors duration-200'
-                            >
-                                {link.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
 
                 {/* Divider */}
                 <div className='w-full border-t border-white/10' />
