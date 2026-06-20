@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { PhoneIcon } from 'lucide-react'
-import wireless_earbuds from '../../assets/product-img/wirelessearbuds.jpg'
-import smart_watch from '../../assets/product-img/smartwatch.jpg'
-import mini_projector from '../../assets/product-img/miniprojector.jpg'
+import wireless_earbuds from '../../assets/product-img/wirelessearbuds.webp'
+import smart_watch from '../../assets/product-img/smartwatch.webp'
+import mini_projector from '../../assets/product-img/miniprojector.webp'
 import { formatNaira, WHATSAPP_GROUP_LINK, buildEnquiryMessage } from '../../data/products'
 
 

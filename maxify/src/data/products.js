@@ -1,12 +1,12 @@
-import wireless_earbuds from '../assets/product-img/wirelessearbuds.jpg'
-import smart_watch from '../assets/product-img/smartwatch.jpg'
-import mini_projector from '../assets/product-img/miniprojector.jpg'
-import power_bank from '../assets/product-img/powerbank.jpg'
-import bluetooth from '../assets/product-img/btspeaker.jpg'
+import wireless_earbuds from '../assets/product-img/wirelessearbuds.webp'
+import smart_watch from '../assets/product-img/smartwatch.webp'
+import mini_projector from '../assets/product-img/miniprojector.webp'
+import power_bank from '../assets/product-img/powerbank.webp'
+import bluetooth from '../assets/product-img/btspeaker.webp'
 import wireless_charger from '../assets/product-img/wireless.webp'
-import neckband from '../assets/product-img/neckband.jfif'
-import usbC from '../assets/product-img/usbc.jfif'
-import smart_fitness from '../assets/product-img/smart.jfif'
+import neckband from '../assets/product-img/neckband.webp'
+import usbC from '../assets/product-img/usbc.webp'
+import smart_fitness from '../assets/product-img/smart.webp'
 
 export const products = [
     {
