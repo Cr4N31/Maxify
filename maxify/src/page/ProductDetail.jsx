@@ -48,7 +48,7 @@ function ProductDetail() {
                     <p className='text-white/60 leading-relaxed'>{product.description}</p>
                 </div>
 
-                <CTAButton/>
+                <CTAbutton/>
             </div>
         </section>
     )
